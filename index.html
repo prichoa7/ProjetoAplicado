@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    
+<head></head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="description" content="Análise técnica sobre a lógica algorítmica de atribuição de entregadores em apps de delivery">
+    <meta name="theme-color" content="#EA1C24">
+    <title>Lógica Algorítmica de Atribuição em Apps de Delivery</title>
+    <link rel="stylesheet" href="style.css">
+    <!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lógica Algorítmica de Atribuição em Apps de Delivery | ULBRA São Lucas</title>
+  <meta name="description" content="Desvendando os algoritmos por trás do iFood, Rappi e similares. Projeto desenvolvido na escola técnica ULBRA São Lucas.">
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#" class="nav-logo">
+        <img src="Img/Logo.png" alt="AppsDelivery" class="nav-logo-img" style="height:48px; width:auto; margin-right:10px; vertical-align:middle; object-fit:contain;">
+        <span class="nav-logo-text" style="font-weight:600; font-size:1rem; vertical-align:middle;">AppsDelivery</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#introducao">Introdução</a></li>
+        <li><a href="#fluxograma">Fluxograma</a></li>
+        <li><a href="#banco-dados">Banco de Dados</a></li>
+        <li><a href="#fatores">Fatores</a></li>
+        <li><a href="#algoritmos">Algoritmos</a></li>
+        <li><a href="#mockup">Mockup</a></li>
+        <li><a href="#conclusao">Conclusão</a></li>
+        <li><a href="#sobre-nos">Sobre Nós</a></li>
+      </ul>
+      <button class="theme-toggle" id="themeToggle" aria-label="Alternar tema">🌙</button>
+      <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero" id="hero">
+    <div class="hero-content">
+      <span class="hero-badge">🎓 Projeto ULBRA São Lucas</span>
+      <h1>Lógica Algorítmica de Atribuição em <span class="text-gradient">Apps de Delivery</span></h1>
+      <p class="hero-subtitle">Desvendando os algoritmos por trás do iFood, Rappi e similares</p>
+      <div class="hero-buttons">
+        <a href="#introducao" class="btn btn-primary">Explorar Projeto</a>
+        <a href="#fluxograma" class="btn btn-secondary">Ver Fluxograma</a>
+      </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Carousel Section -->
+  <section class="carousel-section">
+    <div class="carousel" id="carousel">
+      <div class="carousel-track">
+        <div class="carousel-slide active">
+          <img src="Img/introducao.png" alt="Introdução" class="carousel-img" data-name="DeliveryApps" data-expl="Visão geral do projeto: objetivo, escopo e público-alvo.">
+          <div class="slide-caption">DeliveryApps</div>
+        </div>
+        <div class="carousel-slide">
+          <img src="Img/Fluxograma.png" alt="Fluxograma" class="carousel-img" data-name="Fluxograma" data-expl="Fluxograma mostrando as etapas de atribuição de pedidos passo a passo.">
+          <div class="slide-caption">Fluxograma</div>
+        </div>
+        <div class="carousel-slide">
+          <img src="Img/conceitual.png" alt="Conceitual (Banco de dados)" class="carousel-img" data-name="Conceitual (Banco de dados)" data-expl="Diagrama conceitual das entidades e relacionamentos do banco de dados.">
+          <div class="slide-caption">Conceitual (Banco de dados)</div>
+        </div>
+      </div>
+      <div class="carousel-nav">
+        <button class="carousel-btn" data-slide="0" aria-label="Slide 1"></button>
+        <button class="carousel-btn" data-slide="1" aria-label="Slide 2"></button>
+        <button class="carousel-btn" data-slide="2" aria-label="Slide 3"></button>
+      </div>
+      <button class="carousel-arrow carousel-prev" aria-label="Anterior">❮</button>
+      <button class="carousel-arrow carousel-next" aria-label="Próximo">❯</button>
+    </div>
+    <!-- Modal para visualização ampliada -->
+    <div id="imgModal" class="img-modal" aria-hidden="true">
+      <button class="modal-close" id="modalClose" aria-label="Fechar">×</button>
+      <img id="modalImg" src="" alt="Imagem ampliada">
+      <div class="modal-caption" id="modalCaption"></div>
+    </div>
+  </section>
+  
+
+  <!-- Introdução -->
+  <section class="section" id="introducao">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Sobre o Projeto</span>
+        <h2 class="section-title">Introdução</h2>
+      </div>
+      <div class="intro-content">
+        <div class="intro-text">
+          <p>Este site faz parte de um projeto desenvolvido na nossa escola técnica <strong>ULBRA São Lucas</strong>. Aqui buscamos explicar, de forma clara e lógica, como aplicativos de delivery — como iFood e Rappi — escolhem qual entregador recebe cada pedido.</p>
+          <p>Nosso objetivo é revelar os bastidores desse processo, mostrando quais decisões o sistema toma, que dados utiliza e por que essa funcionalidade funciona tão bem para clientes, restaurantes e entregadores.</p>
+          <div class="highlight-box">
+            <span class="highlight-icon">💡</span>
+            <p>A atribuição de pedidos é um processo complexo, baseado em múltiplos fatores, machine learning e decisões em tempo real.</p>
+          </div>
+        </div>
+        <div class="intro-features">
+          <div class="feature-card">
+            <span class="feature-icon">⚡</span>
+            <h4>Tempo Real</h4>
+            <p>Decisões em milissegundos</p>
+          </div>
+          <div class="feature-card">
+            <span class="feature-icon">🧠</span>
+            <h4>Machine Learning</h4>
+            <p>Algoritmos inteligentes</p>
+          </div>
+          <div class="feature-card">
+            <span class="feature-icon">📊</span>
+            <h4>Big Data</h4>
+            <p>Análise de milhões de dados</p>
+          </div>
+          <div class="feature-card">
+            <span class="feature-icon">🎯</span>
+            <h4>Otimização</h4>
+            <p>Máxima eficiência</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Fluxograma -->
+  <section class="section section-alt" id="fluxograma">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Processo</span>
+        <h2 class="section-title">Fluxograma de Atribuição</h2>
+        <p class="section-subtitle">Entenda passo a passo como o sistema decide qual entregador recebe cada pedido</p>
+      </div>
+      
+      <div class="flowchart-explanation">
+        <p>O fluxograma mostra como o app decide qual entregador vai receber um pedido. Primeiro, o restaurante aceita o pedido. Depois disso, o sistema calcula o tempo de preparo e procura entregadores disponíveis na região.</p>
+        <p>Para cada entregador, o app analisa:</p>
+        <ul class="analysis-list">
+          <li>📍 Distância até o restaurante</li>
+          <li>📦 Ocupação atual</li>
+          <li>✅ Taxa de aceitação</li>
+          <li>⭐ Score geral</li>
+        </ul>
+      </div>
+
+      <div class="flow-diagram">
+        <div class="flow-image-wrapper">
+          <img src="Img/Fluxograma.png" alt="Fluxograma" class="flow-image" data-name="Fluxograma" data-expl="Fluxograma mostrando as etapas de atribuição de pedidos passo a passo. Clique para ampliar.">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 18 Etapas -->
+  <section class="section" id="etapas">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Detalhamento</span>
+        <h2 class="section-title">18 Etapas do Processo</h2>
+        <p class="section-subtitle">Cada passo do algoritmo de atribuição explicado</p>
+      </div>
+      <div class="steps-grid">
+        <div class="step-card"><span class="step-number">1</span><p>Cliente faz o pedido no app</p></div>
+        <div class="step-card"><span class="step-number">2</span><p>App envia pedido para o restaurante</p></div>
+        <div class="step-card"><span class="step-number">3</span><p>Restaurante aceita e informa tempo de preparo</p></div>
+        <div class="step-card"><span class="step-number">4</span><p>Sistema inicia busca por entregadores</p></div>
+        <div class="step-card"><span class="step-number">5</span><p>Filtra entregadores por distância (raio inicial)</p></div>
+        <div class="step-card"><span class="step-number">6</span><p>Verifica disponibilidade (online e sem pedido)</p></div>
+        <div class="step-card"><span class="step-number">7</span><p>Calcula score de cada entregador</p></div>
+        <div class="step-card"><span class="step-number">8</span><p>Considera histórico de aceitação</p></div>
+        <div class="step-card"><span class="step-number">9</span><p>Analisa tempo médio de entrega anterior</p></div>
+        <div class="step-card"><span class="step-number">10</span><p>Verifica modalidade (moto, bike, carro)</p></div>
+        <div class="step-card"><span class="step-number">11</span><p>Gera ranking com pontuação ponderada</p></div>
+        <div class="step-card"><span class="step-number">12</span><p>Envia notificação ao primeiro colocado</p></div>
+        <div class="step-card"><span class="step-number">13</span><p>Aguarda resposta (timeout ~30s)</p></div>
+        <div class="step-card"><span class="step-number">14</span><p>Se aceito: associa pedido ao entregador</p></div>
+        <div class="step-card"><span class="step-number">15</span><p>Se recusado: tenta próximo do ranking</p></div>
+        <div class="step-card"><span class="step-number">16</span><p>Sem candidatos: aumenta raio de busca</p></div>
+        <div class="step-card"><span class="step-number">17</span><p>Cliente é notificado sobre entregador</p></div>
+        <div class="step-card"><span class="step-number">18</span><p>Rastreamento em tempo real é ativado</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Banco de Dados -->
+  <section class="section section-alt" id="banco-dados">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Estrutura</span>
+        <h2 class="section-title">Banco de Dados</h2>
+        <p class="section-subtitle">As entidades que sustentam todo o sistema</p>
+      </div>
+      <div class="db-grid">
+        <div class="db-image-wrapper">
+          <img src="Img/conceitual.png" alt="Conceitual (Banco de dados)" class="db-image" data-name="Conceitual (Banco de dados)" data-expl="Diagrama relacionado ao fluxo de dados e entidades.">
+        </div>
+      </div>
+      <div class="db-features">
+        <div class="db-large-card">
+            <h4>Descrição do Modelo de Dados</h4>
+            <p>O banco de dados foi criado para representar apenas o processo de <span class="emph-red">atribuição de entregadores</span>. Ele contém quatro entidades principais: <span class="emph-red">Cliente</span>, <span class="emph-red">Pedido</span>, <span class="emph-red">Entregador</span> e <span class="emph-red">Atribuição</span>.</p>
+
+            <p>O <span class="emph-red">Cliente</span> guarda dados básicos do usuário, enquanto o <span class="emph-red">Pedido</span> registra informações como valor, horário e status. Cada cliente pode fazer vários pedidos.</p>
+
+            <p>O <span class="emph-red">Entregador</span> armazena nome, tipo de transporte e avaliação média, elementos essenciais para o cálculo de prioridade.</p>
+
+            <p>A entidade <span class="emph-red">Atribuição</span> conecta cada pedido a possíveis entregadores, registrando distância, estimativa de entrega e o <span class="emph-red">score final</span> que o sistema usa para decidir quem é o melhor candidato.</p>
+
+            <p>Com essas entidades e seus relacionamentos, o sistema consegue comparar entregadores, calcular rotas, registrar tentativas e escolher automaticamente a opção mais eficiente para cada pedido.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Fatores Chave -->
+  <section class="section" id="fatores">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Análise</span>
+        <h2 class="section-title">Fatores Chave</h2>
+        <p class="section-subtitle">Os múltiplos critérios que o algoritmo considera</p>
+      </div>
+      <div class="factors-grid">
+        <div class="factor-card primary">
+          <div class="factor-weight">Peso Alto</div>
+          <span class="factor-icon">📍</span>
+          <h4>Proximidade Geográfica</h4>
+          <p>Distância até o restaurante é o fator de maior peso na decisão</p>
+        </div>
+        <div class="factor-card">
+          <span class="factor-icon">📦</span>
+          <h4>Ocupação</h4>
+          <p>Entregadores sem pedido têm prioridade</p>
+        </div>
+        <div class="factor-card">
+          <span class="factor-icon">🛵</span>
+          <h4>Modalidade</h4>
+          <p>Moto, bike ou carro conforme necessidade</p>
+        </div>
+        <div class="factor-card">
+          <span class="factor-icon">📜</span>
+          <h4>Histórico</h4>
+          <p>Entregas anteriores e avaliações</p>
+        </div>
+        <div class="factor-card">
+          <span class="factor-icon">⭐</span>
+          <h4>Performance</h4>
+          <p>Tempo médio e taxa de sucesso</p>
+        </div>
+        <div class="factor-card">
+          <span class="factor-icon">❌</span>
+          <h4>Recusas Recentes</h4>
+          <p>Padrão de rejeição de pedidos</p>
+        </div>
+        <div class="factor-card">
+          <span class="factor-icon">🔋</span>
+          <h4>Bateria</h4>
+          <p>Nível de carga do dispositivo</p>
+        </div>
+        <div class="factor-card">
+          <span class="factor-icon">📡</span>
+          <h4>Telemetria</h4>
+          <p>Qualidade do sinal GPS</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Algoritmos -->
+  <section class="section section-alt" id="algoritmos">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Tecnologia</span>
+        <h2 class="section-title">Algoritmos & Modelos</h2>
+        <p class="section-subtitle">A inteligência por trás do sistema</p>
+      </div>
+      <div class="algo-grid">
+        <div class="algo-card">
+          <div class="algo-header">
+            <span class="algo-icon">🧠</span>
+            <h4>Machine Learning</h4>
+          </div>
+          <p>Modelos de ML preveem tempo de preparo, tempo de entrega e probabilidade de aceitação baseados em dados históricos.</p>
+        </div>
+        <div class="algo-card">
+          <div class="algo-header">
+            <span class="algo-icon">🗺️</span>
+            <h4>Otimização de Rotas</h4>
+          </div>
+          <p>Algoritmos calculam a melhor rota considerando trânsito em tempo real, distância e condições da via.</p>
+        </div>
+        <div class="algo-card">
+          <div class="algo-header">
+            <span class="algo-icon">⚖️</span>
+            <h4>Scoring Ponderado</h4>
+          </div>
+          <p>Sistema de pontuação que combina múltiplos fatores com pesos diferentes para ranking de entregadores.</p>
+        </div>
+        <div class="algo-card">
+          <div class="algo-header">
+            <span class="algo-icon">🔄</span>
+            <h4>Feedback Loop</h4>
+          </div>
+          <p>Resultados de cada entrega alimentam o sistema, permitindo aprendizado e melhoria contínua.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Conclusão -->
+  <!-- Mockup -->
+  <section class="section" id="mockup">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Mockup</span>
+        <h2 class="section-title">Tela de Acompanhamento do Pedido no <span class="emph-red">iFood</span></h2>
+      </div>
+
+      <div class="db-large-card">
+        <video id="mockupVideo" class="site-video" src="Img/Video1.mp4" autoplay muted loop playsinline controls aria-label="Mockup de acompanhamento de pedidos"></video>
+        <div style="padding:16px 0 0 0;">
+          <p>Fizemos este <span class="emph-red">mockup</span> para representar a etapa do <span class="emph-red">acompanhamento de pedidos</span> dentro do aplicativo, mostrando como o <span class="emph-red">iFood</span> exibe o <span class="emph-red">status</span> da entrega, o <span class="emph-red">horário previsto</span> e as <span class="emph-red">opções de interação</span> do usuário.</p>
+          <p>Como não foi possível gravar essa tela ao vivo, recriei a interface para ilustrar exatamente como funciona a parte <span class="emph-red">visual</span> e <span class="emph-red">informativa</span> dessa fase do pedido. O objetivo é demonstrar a <span class="emph-red">experiência do usuário</span> e destacar os elementos principais da tela de <span class="emph-red">rastreamento de entrega</span>.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="conclusao">
+    <div class="container">
+      <div class="conclusion-content">
+        <span class="section-badge">Conclusão</span>
+        <h2 class="section-title">O Equilíbrio Perfeito</h2>
+        <p class="conclusion-text">O sistema equilibra <span class="emph-red">velocidade</span>, <span class="emph-red">eficiência</span> e <span class="emph-red">disponibilidade</span> para garantir a melhor entrega no menor tempo possível.</p>
+
+        <div class="conclusion-dossier">
+          <p>Ao longo da investigação, conseguimos entender que por trás do botão <span class="emph-red">“Fazer pedido”</span> existe um sistema extremamente complexo, baseado em cálculos contínuos, priorização inteligente e tomada de decisão automática. A lógica não é só <span class="emph-red">“chamar o entregador mais perto”</span>, mas sim equilibrar <span class="emph-red">tempo</span>, <span class="emph-red">custo</span>, <span class="emph-red">disponibilidade</span>, <span class="emph-red">segurança</span>, <span class="emph-red">reputação</span>, <span class="emph-red">histórico de desempenho</span> e até o comportamento dos usuários.</p>
+
+          <p>Um dos pontos centrais que descobrimos é que a lógica desses aplicativos lembra muito o <span class="emph-red">Problema do Caixeiro Viajante (TSP – Traveling Salesman Problem)</span>, um clássico da matemática e da computação. Ele busca a melhor rota possível, gastando o menor tempo possível, levando em conta todas as variáveis. Assim como o TSP, o sistema do iFood precisa <span class="emph-red">otimizar</span> centenas de pequenas decisões ao mesmo tempo, lidando com distância, trânsito, entregadores ocupados e restaurantes com diferentes tempos de preparo — é literalmente <span class="emph-red">otimização de rota em tempo real</span>.</p>
+
+          <p>Também percebemos que o app usa estratégias psicológicas que mantêm o usuário preso no processo, como o <span class="emph-red">FOMO</span> (medo de ficar de fora) e a ansiedade controlada. Por exemplo:</p>
+          <ul>
+            <li>A barra <span class="emph-red">“Procurando entregador...”</span> mantém o usuário atento</li>
+            <li>A animação de carregamento evita que a pessoa feche o app</li>
+            <li>A notificação <span class="emph-red">“Encontramos alguém!”</span> gera alívio e dopamina</li>
+          </ul>
+
+          <p>Tudo isso faz parte da experiência pensada para reduzir abandono de pedido. Durante o projeto, identificamos alguns problemas reais enfrentados pelos apps, como:</p>
+          <ul>
+            <li>Falta de entregadores em horários de pico</li>
+            <li>Rotas pouco eficientes quando há muitos pedidos na mesma região</li>
+            <li>Demora no restaurante afetando toda a cadeia</li>
+            <li>Cálculos que precisam ser refeitos a cada segundo</li>
+          </ul>
+
+          <p>Para entender isso, investigamos:</p>
+          <ul>
+            <li>Cálculo de distância (<span class="emph-red">Haversine</span>)</li>
+            <li>Tempo estimado de deslocamento</li>
+            <li>Janela de disponibilidade dos entregadores</li>
+            <li>Fila de pedidos por restaurante</li>
+            <li>Ranking de prioridade baseado em desempenho</li>
+          </ul>
+
+          <p>A partir disso, conseguimos reconstruir um modelo lógico que mostra como o sistema funciona por trás das telas — do momento que o usuário clica em confirmar pedido até o instante em que um entregador é selecionado. Nosso dossiê final traz fluxograma, DER, mockups e explicações técnicas que deixam claro que nada nesse processo acontece por acaso: é tudo <span class="emph-red">algoritmo</span>, <span class="emph-red">otimização</span> e <span class="emph-red">psicologia</span> trabalhando juntos para criar a sensação de rapidez e confiabilidade.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sobre Nós -->
+  <section class="section" id="sobre-nos">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Equipe</span>
+        <h2 class="section-title">Sobre Nós</h2>
+        <p class="section-subtitle">Conheça a equipe por trás do projeto</p>
+      </div>
+
+      <div class="about-grid">
+        <!-- Card João -->
+        <div class="team-card">
+          <div class="team-photo"><img src="Img/joao.jpeg" alt="João"></div>
+          <div class="team-card-body">
+            <h3 class="team-name">João</h3>
+            <div class="team-info">
+              <div class="team-role">
+                <span class="info-label">FUNÇÃO</span>
+                <p>Desenvolvimento Front-end — layout, interações e responsividade.</p>
+              </div>
+              <div class="team-contrib">
+                <span class="info-label">CONTRIBUIÇÕES</span>
+                <p>Criação do site, responsividade e comandando o projeto.</p>
+              </div>
+            </div>
+          </div>
+          <a class="git-btn" href="https://github.com/joaojoaoGIT" target="_blank" rel="noopener noreferrer" aria-label="Abrir GitHub do João">
+            <svg width="22" height="22" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.28.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.19 0 .21.15.46.55.38C13.71 14.53 16 11.54 16 8c0-4.42-3.58-8-8-8z"/></svg>
+          </a>
+        </div>
+
+        <!-- Card Kelvyn -->
+        <div class="team-card">
+          <div class="team-photo crop-bottom"><img src="Img/kelvyn.jpeg" alt="Kelvyn"></div>
+          <div class="team-card-body">
+            <h3 class="team-name">Kelvyn</h3>
+            <div class="team-info">
+              <div class="team-role">
+                <span class="info-label">FUNÇÃO</span>
+                <p>Modelagem de dados — estruturas.</p>
+              </div>
+              <div class="team-contrib">
+                <span class="info-label">CONTRIBUIÇÕES</span>
+                <p>Diagrama conceitual, modelagem do banco e lógica de atribuição.</p>
+              </div>
+            </div>
+          </div>
+          <a class="git-btn" href="https://github.com/prichoa7" target="_blank" rel="noopener noreferrer" aria-label="Abrir GitHub do Kelvyn">
+            <svg width="22" height="22" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.28.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.19 0 .21.15.46.55.38C13.71 14.53 16 11.54 16 8c0-4.42-3.58-8-8-8z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <img src="Img/Logo.png" alt="AppsDelivery" class="footer-logo">
+          <span>AppsDelivery</span>
+        </div>
+        <p>Projeto desenvolvido na escola técnica ULBRA São Lucas</p>
+        <p class="footer-copy">Feito por <a href="https://github.com/joaojoaoGIT" target="_blank" rel="noopener noreferrer">João Pedro Cassanego</a> e <a href="https://github.com/prichoa7" target="_blank" rel="noopener noreferrer">Kelvyn Prichoa</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
